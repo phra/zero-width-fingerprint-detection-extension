@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "ZWC-tracking-detection",
+    "description": "Check for ZWC tracking in cut/copy/paste clipboard events",
+    "version": "1.0",
+    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/selection-to-clipboard",
+    "icons": {
+        "48": "icons/clipboard-icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "all_frames": true,
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ],
+    "options_ui": {
+        "page": "options.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "zwc.json"
+    ]
+}
